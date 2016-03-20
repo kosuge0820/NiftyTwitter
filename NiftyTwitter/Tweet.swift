@@ -9,5 +9,20 @@
 import UIKit
 
 class Tweet: NSObject {
+    var text: String
+    
+    init(text: String) {
+        self.text = text
+    }
 
+    
+    func save() {
+        let tweetsObject = NCMBObject(className: "Tweet")
+        tweetObject.setObject(text, forKey: "text")
+        tweetObject.saveInBackgroundWithBlock { (error) in
+            if error == nil {
+                print("保存完了！")
+            }
+        }
+    }
 }
