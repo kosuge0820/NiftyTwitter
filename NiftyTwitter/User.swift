@@ -25,6 +25,7 @@ class User: NSObject {
             if error == nil {
                 print("サインアップ成功")
             } else {
+                print(error?.userInfo["NSLocalizedDescription"] as! String)
                 print("サインアップ失敗")
             }
         }
