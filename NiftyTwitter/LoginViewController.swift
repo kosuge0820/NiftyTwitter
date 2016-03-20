@@ -23,6 +23,20 @@ class LoginViewController: UIViewController {
     
     @IBAction func tapSignUpButton(sender: UIButton) {
         let user = User(name: nameTextField.text!, password: passwordTextField.text!)
-        user.signUp()
+        user.signUp { (message) -> Void in
+            if let unwrappedMessage = message {
+                self.showAlert(unwrappedMessage)
+                print("サインアップ失敗")
+            } else {
+                print("サインアップ成功")
+            }
+        }
+    }
+    
+    func showAlert(message: String?) {
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .Alert)
+        let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(action)
+        presentViewController(alertController, animated: true, completion: nil)
     }
 }

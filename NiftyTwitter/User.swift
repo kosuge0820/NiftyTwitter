@@ -17,17 +17,13 @@ class User: NSObject {
         self.password = password
     }
     
-    func signUp() {
+    func signUp(callback: (message: String?) -> Void) {
         let user = NCMBUser()
         user.userName = name
         user.password = password
         user.signUpInBackgroundWithBlock { (error) in
-            if error == nil {
-                print("サインアップ成功")
-            } else {
-                print(error?.userInfo["NSLocalizedDescription"] as! String)
-                print("サインアップ失敗")
-            }
+            callback(message: error?.userInfo["NSLocalizedDescription"] as? String)
         }
     }
 }
+
