@@ -9,8 +9,8 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var nameLabel: UITextField!
-    @IBOutlet weak var passwordLabel: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tapSignUpButton(sender: UIButton) {
-        
+        let user = User(name: nameTextField.text!, password: passwordTextField.text!)
+        user.signUp()
     }
 }

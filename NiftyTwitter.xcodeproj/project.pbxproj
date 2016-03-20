@@ -20,6 +20,7 @@
 		FC4FD21D1C9E71BB00B64621 /* TweetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FD21C1C9E71BB00B64621 /* TweetManager.swift */; };
 		FC4FD21F1C9E71D800B64621 /* TimeLineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FD21E1C9E71D800B64621 /* TimeLineTableViewController.swift */; };
 		FC4FD2221C9EDDA200B64621 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FD2211C9EDDA200B64621 /* LoginViewController.swift */; };
+		FC4FD2241C9EDFE600B64621 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4FD2231C9EDFE600B64621 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		FC4FD21E1C9E71D800B64621 /* TimeLineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineTableViewController.swift; sourceTree = "<group>"; };
 		FC4FD2201C9E7DB500B64621 /* NiftyTwitter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NiftyTwitter-Bridging-Header.h"; sourceTree = "<group>"; };
 		FC4FD2211C9EDDA200B64621 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FC4FD2231C9EDFE600B64621 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			children = (
 				FC4FD21A1C9E71AD00B64621 /* Tweet.swift */,
 				FC4FD21C1C9E71BB00B64621 /* TweetManager.swift */,
+				FC4FD2231C9EDFE600B64621 /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				FC4FD21D1C9E71BB00B64621 /* TweetManager.swift in Sources */,
 				FC4FD1E41C9E6FC500B64621 /* AppDelegate.swift in Sources */,
 				FC4FD2181C9E719800B64621 /* TweetTableViewCell.swift in Sources */,
+				FC4FD2241C9EDFE600B64621 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

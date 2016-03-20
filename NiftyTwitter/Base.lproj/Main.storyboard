@@ -68,11 +68,6 @@
                                     <action selector="tapLoginButton:" destination="bXl-Gm-6uQ" eventType="touchUpInside" id="WJs-V9-k3H"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ODx-Rq-qIB">
-                                <rect key="frame" x="97" y="150" width="180" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HiZ-Yi-d4B">
                                 <rect key="frame" x="198" y="324" width="79" height="72"/>
                                 <state key="normal" title="SignUp">
@@ -85,6 +80,11 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uK4-o7-AYi">
                                 <rect key="frame" x="97" y="239" width="180" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ODx-Rq-qIB">
+                                <rect key="frame" x="97" y="150" width="180" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
@@ -93,8 +93,8 @@
                     <navigationItem key="navigationItem" id="CT9-yb-cEo"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="nameLabel" destination="ODx-Rq-qIB" id="qfa-ve-a2h"/>
-                        <outlet property="passwordLabel" destination="uK4-o7-AYi" id="yhT-Gq-RVE"/>
+                        <outlet property="nameTextField" destination="ODx-Rq-qIB" id="yFG-GS-qzE"/>
+                        <outlet property="passwordTextField" destination="uK4-o7-AYi" id="URD-2k-pfM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9de-va-cZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
