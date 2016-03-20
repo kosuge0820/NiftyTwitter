@@ -38,6 +38,9 @@
                         </textField>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="textField" destination="18f-n3-cxy" id="zLZ-DI-DhS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYJ-Na-S7y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

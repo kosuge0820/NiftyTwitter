@@ -16,12 +16,12 @@ class Tweet: NSObject {
     }
 
     
-    func save() {
-        let tweetsObject = NCMBObject(className: "Tweet")
+    func save(callback: () -> Void) {
+        let tweetObject = NCMBObject(className: "Tweet")
         tweetObject.setObject(text, forKey: "text")
         tweetObject.saveInBackgroundWithBlock { (error) in
             if error == nil {
-                print("保存完了！")
+                callback()
             }
         }
     }

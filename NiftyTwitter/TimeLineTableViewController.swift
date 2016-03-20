@@ -9,11 +9,17 @@
 import UIKit
 
 class TimeLineTableViewController: UITableViewController {
+    @IBOutlet weak var textField: UITextField!
 
+    let tweetManager = TweetManager.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    tableView.registerNib(UINib(nibName: "TweetTableViewCell", bundle: nil), forCellReuseIdentifier: "TweetTableViewCell")
+        tableView.registerNib(UINib(nibName: "TweetTableViewCell", bundle: nil), forCellReuseIdentifier: "TweetTableViewCell")
+        tweetManager.fetchTweets { () in
+            self.tableView.reloadData()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -25,15 +31,29 @@ class TimeLineTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return tweetManager.tweets.count
+
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetTableViewCell", forIndexPath: indexPath) as! TweetTableViewCell
+        
+        let tweet = tweetManager.tweets[indexPath.row]
+        cell.nameLabel.text = "satoshi"
+        cell.tweetLabel.text = tweet.text
         return cell
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 150
+    }
+    
+    func post() {
+        let tweet = Tweet(text: textField.text!)
+        tweet.save { () in
+            self.tweetManager.fetchTweets({ () in
+                self.tableView.reloadData()
+            })
+        }
     }
 }
