@@ -24,6 +24,7 @@ class TimeLineTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "投稿", style: .Plain, target: self, action: "post")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: "logout")
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -54,6 +55,18 @@ class TimeLineTableViewController: UITableViewController {
             self.tweetManager.fetchTweets({ () in
                 self.tableView.reloadData()
             })
+        }
+    }
+    
+    func logout() {
+        NCMBUser.logOut()
+        performSegueWithIdentifier("modalLoginViewController", sender: self)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if NCMBUser.currentUser() == nil {
+            performSegueWithIdentifier("modalLoginViewController", sender: self)
         }
     }
 }

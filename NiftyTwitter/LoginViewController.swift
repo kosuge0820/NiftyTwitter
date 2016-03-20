@@ -26,9 +26,8 @@ class LoginViewController: UIViewController {
         user.signUp { (message) -> Void in
             if let unwrappedMessage = message {
                 self.showAlert(unwrappedMessage)
-                print("サインアップ失敗")
             } else {
-                print("サインアップ成功")
+                self.dismissViewControllerAnimated(true, completion: nil)
             }
         }
     }

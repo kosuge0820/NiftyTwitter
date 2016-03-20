@@ -25,5 +25,11 @@ class User: NSObject {
             callback(message: error?.userInfo["NSLocalizedDescription"] as? String)
         }
     }
+    
+    func login(callback: (message: String?) -> Void) {
+        NCMBUser.logInWithUsernameInBackground(self.name, password: self.password) { (user, error) in
+            callback(message: error?.userInfo["NSLocalizedDescription"] as? String)
+        }
+    }
 }
 
