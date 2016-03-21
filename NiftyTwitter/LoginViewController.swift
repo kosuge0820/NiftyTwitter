@@ -18,7 +18,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func tapLoginButton(sender: UIButton) {
-        
+        let user = User(name: nameTextField.text!, password: passwordTextField.text!)
+        user.login { (message) in
+            if let unwrappedMessage = message {
+                self.showAlert(unwrappedMessage)
+            } else {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
     }
     
     @IBAction func tapSignUpButton(sender: UIButton) {

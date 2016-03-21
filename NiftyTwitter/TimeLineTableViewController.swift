@@ -26,7 +26,14 @@ class TimeLineTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "投稿", style: .Plain, target: self, action: "post")
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: "logout")
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if NCMBUser.currentUser() == nil {
+            performSegueWithIdentifier("modalLoginViewController", sender: self)
+        }
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -40,7 +47,7 @@ class TimeLineTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetTableViewCell", forIndexPath: indexPath) as! TweetTableViewCell
         
         let tweet = tweetManager.tweets[indexPath.row]
-        cell.nameLabel.text = "satoshi"
+        cell.nameLabel.text = tweet.user?.name
         cell.tweetLabel.text = tweet.text
         return cell
     }
@@ -63,10 +70,5 @@ class TimeLineTableViewController: UITableViewController {
         performSegueWithIdentifier("modalLoginViewController", sender: self)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        if NCMBUser.currentUser() == nil {
-            performSegueWithIdentifier("modalLoginViewController", sender: self)
-        }
-    }
+
 }
